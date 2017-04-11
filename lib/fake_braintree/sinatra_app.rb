@@ -14,11 +14,11 @@ require 'fake_braintree/merchant_account'
 module FakeBraintree
   class SinatraApp < Sinatra::Base
     set :show_exceptions, false
-    set :dump_errors, true
+    set :dump_errors, false
     set :raise_errors, true
     set :public_folder, File.dirname(__FILE__) + '/braintree_assets'
     set :protection, except: :frame_options
-    disable :logging
+    set :logging, false
 
     include Helpers
 
