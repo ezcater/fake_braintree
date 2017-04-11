@@ -128,9 +128,9 @@ module FakeBraintree
           new_credit_card_hash
         )
 
-        new_credit_card_hash['bin'] = new_credit_card_hash['number'][0..5]
-        new_credit_card_hash['last_4'] = new_credit_card_hash['number'][-4..-1]
-        new_credit_card_hash['token']  = credit_card_token(new_credit_card_hash)
+        new_credit_card_hash['bin'] = new_credit_card_hash['number'][0..5] rescue nil
+        new_credit_card_hash['last_4'] = new_credit_card_hash['number'][-4..-1] rescue nil
+        new_credit_card_hash['token']  = credit_card_token(new_credit_card_hash) rescue nil
 
         if credit_card_expiration_month
           new_credit_card_hash['expiration_month'] = credit_card_expiration_month
