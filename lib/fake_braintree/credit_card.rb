@@ -143,7 +143,7 @@ module FakeBraintree
     end
 
     def set_card_type
-      @credit_card['card_type'] = 'FakeBraintree'
+      @credit_card['card_type'] = 'visa'
     end
 
     def set_expiration_month_and_year
