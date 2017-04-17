@@ -75,7 +75,7 @@ module FakeBraintree
     # card has the flag.
     def update_default_card
       if @credit_card['default']
-        cards = FakeBraintree.registry.customers[@credit_card['customer_id']]['credit_cards'] rescue []
+        cards = FakeBraintree.registry.customers[@credit_card['customer_id'].to_s]['credit_cards'] rescue []
         cards.each do |card|
           card['default'] = false
         end
