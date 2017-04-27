@@ -7,7 +7,7 @@ describe 'Braintree::CreditCard.find' do
     credit_card = Braintree::CreditCard.find(token_for(month, year))
 
     expect(credit_card.bin).to eq TEST_CC_NUMBER[0, 6]
-    expect(credit_card.card_type).to eq "FakeBraintree"
+    expect(credit_card.card_type).to eq "visa"
     expect(credit_card.last_4).to eq TEST_CC_NUMBER[-4,4]
     expect(credit_card.expiration_month).to eq month
     expect(credit_card.expiration_year).to eq  year
